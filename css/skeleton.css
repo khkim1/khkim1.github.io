@@ -408,6 +408,13 @@ hr {
   color: black;
 }
 
+.active {
+  text-decoration: none;
+  color: #4da6ff;
+  outline: none;
+  background: #34495e;
+}
+
 
 /* Clearing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

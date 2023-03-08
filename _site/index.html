@@ -34,13 +34,6 @@
     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
   </script>
 
-  <style>
-      /*Code to change color of active link*/
-      .navbar > .active > a {
-          color: red;
-      }
-  </style>
-
 </head>
 
 <body>
@@ -48,19 +41,22 @@
   <!-- Navigation Bar
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div id="navbar">
-    <a href="#home">About</a>
-    <a href="#news">News</a>
-    <a href="#publications">Publications</a>
+    <a class="topnavbar active" href="#home">About</a>
+    <a class="topnavbar" href="#news">News</a>
+    <a class="topnavbar" href="#publications">Publications</a>
   </div>
 
   <script>
-      $(document).ready(function () {
-          $("navbar").click(function (e) {
-           $("navbar").removeClass("active");
-           $(this).addClass("active");
-            });
-        });
-    </script>
+  var header = document.getElementById("navbar");
+  var btns = header.getElementsByClassName("topnavbar");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    });
+  }
+  </script>
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
