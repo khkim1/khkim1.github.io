@@ -34,6 +34,12 @@
     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
   </script>
 
+  <style>
+      /*Code to change color of active link*/
+      .navbar > .active > a {
+          color: red;
+      }
+  </style>
 
 </head>
 
@@ -47,6 +53,14 @@
     <a href="#publications">Publications</a>
   </div>
 
+  <script>
+      $(document).ready(function () {
+          $("navbar").click(function (e) {
+           $("navbar").removeClass("active");
+           $(this).addClass("active");
+            });
+        });
+    </script>
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
